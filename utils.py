@@ -1,4 +1,9 @@
-import fitz
+try:
+    import fitz  # PyMuPDF
+except ImportError:
+    print("PyMuPDF (fitz) not found. Please install it with: pip install PyMuPDF")
+    raise ImportError("PyMuPDF is required for PDF processing")
+
 import base64
 from io import BytesIO
 from PIL import Image
